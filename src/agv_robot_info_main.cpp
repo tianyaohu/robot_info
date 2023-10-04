@@ -14,11 +14,15 @@ int main(int argc, char **argv) {
   // init payload
   std::string payload = "100 kg";
   ri.init_max_payload(&payload);
+  //init hydraulic system monitor
   ri.update_msg_with_hydr_sys_monitor();
+
+  //continuously publishing message until ^c
   while (nh.ok()) {
     ri.publish_data();
     usleep(1000000);
   }
+
   ri.publish_data();
   ros::spin(); // spin the ros node
 }
