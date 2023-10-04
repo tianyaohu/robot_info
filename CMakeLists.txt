@@ -123,7 +123,9 @@ include_directories(
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME}
+  src/hydraulic_system_monitor.cpp
   src/robot_info_class.cpp
+  src/agv_robot_info_class.cpp
 )
 
 ## Add cmake target dependencies of the library
@@ -135,7 +137,7 @@ add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(robot_info_node src/robot_info_main.cpp src/robot_info_class.cpp)
-add_executable(agv_robot_info_node src/agv_robot_info_main.cpp src/agv_robot_info_class.cpp)
+add_executable(agv_robot_info_node src/agv_robot_info_main.cpp src/hydraulic_system_monitor.cpp src/agv_robot_info_class.cpp)
 
 
 ## Rename C++ executable without prefix

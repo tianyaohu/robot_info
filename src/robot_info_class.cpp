@@ -1,6 +1,5 @@
 #include "robot_info/robot_info_class.h"
 #include <ros/ros.h>
-#include <vector>
 // header file should already decleared all the messages required here.
 
 const std::string RobotInfo::DEFAULT_NAMES[4] = {
