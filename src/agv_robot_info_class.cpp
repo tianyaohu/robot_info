@@ -28,10 +28,9 @@ void AGVRobotInfo::update_msg_with_hydr_sys_monitor() {
     headers++;
   }
   // push values to vec2
-  msg_info.vec1.push_back(hsm.getOilTemp().c_str());
-  msg_info.vec1.push_back(hsm.getTankLevel().c_str());
-  msg_info.vec1.push_back(hsm.getOilPressure().c_str());
-
+  msg_info.vec2.push_back(hsm.getOilTemp().c_str());
+  msg_info.vec2.push_back(hsm.getTankLevel().c_str());
+  msg_info.vec2.push_back(hsm.getOilPressure().c_str());
 }
 
 void AGVRobotInfo::publish_data() {
